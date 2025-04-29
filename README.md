@@ -6,7 +6,7 @@ This project documents my hands-on home lab setup for practicing Security Operat
 - [Overview](#overview)
 - [Tools Used](#tools-used)
 - [Screenshots](#screenshots)
-- [Lab Setup](setup/install_stepsmd)
+- [Lab Setup](setup/install_steps.md)
 - [Skills Practiced](#skills-practiced)
 - [Future Additions](#future-additions)
 - [Contact](#contact)

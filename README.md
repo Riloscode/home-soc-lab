@@ -2,6 +2,15 @@
 
 ## 📌 Overview
 This project documents my hands-on home lab setup for practicing Security Operations Center (SOC) skills using real-world tools like **Security Onion**, **Zeek**, **Nessus**, and **Wireshark**. The goal is to simulate a monitored environment for detecting, analyzing, and responding to suspicious network activity.
+## 📚 Table of Contents
+- [Overview](#overview)
+- [Tools Used](#tools-used)
+- [Screenshots](#screenshots)
+- [Lab Setup](setup/install_stepsmd)
+- [Skills Practiced](#skills-practiced)
+- [Future Additions](#future-additions)
+- [Contact](#contact)
+
 
 ---
 

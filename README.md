@@ -63,7 +63,9 @@ soc-lab/ ├── README.md # Project overview and documentation ├── scre
 - Integrate with GitHub Actions for CI learning
 
 ---
+> 🚧 This project is a work in progress. Additional setup steps, screenshots, and notes will be added soon.
 
+---
 ## 📫 Contact
 Have feedback or questions? Feel free to connect with me on LinkedIn or open an issue.
 

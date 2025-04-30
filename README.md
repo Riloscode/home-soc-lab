@@ -5,7 +5,7 @@ This project documents my hands-on home lab setup for practicing Security Operat
 ## 📚 Table of Contents
 - [Overview](#overview)
 - [Tools Used](#tools-used)
-- [Screenshots](#screenshots)
+- [Screenshots](screenshots/screenshots.md)
 - [Lab Setup](setup/install_steps.md)
 - [Skills Practiced](#skills-practiced)
 - [Future Additions](#future-additions)

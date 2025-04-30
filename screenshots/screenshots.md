@@ -1,5 +1,6 @@
 ### 🔧 VM Configuration
-!(screenshots/vm.png)
+[VM Config](screenshots/vm.png)
+
 
 ### 📦 Installation Start
 ![Install Start](screenshots/install-start.png)

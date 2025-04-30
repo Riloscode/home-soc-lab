@@ -5,7 +5,7 @@
 
 [View Screenshot 2](vm-config-2.png)
 
-[VM Config](vm.png)
+[View Screenshot 3](vm.png)
 
 
 ### 📦 Installation Start

@@ -66,10 +66,19 @@ soc-lab/ ├── README.md # Project overview and documentation ├── scre
 - Integrate with GitHub Actions for CI learning
 
 ---
-> 🚧 This project is a work in progress. Additional setup steps, screenshots, and notes will be added soon.
+
+> 🚧 This project is a work in progress. Soon, additional setup steps, screenshots, and notes will be added.
 
 ---
+
+## ✅ Goals
+- Learn SOC tooling hands-on (Security Onion, Zeek, Suricata)
+- Practice detection, analysis, and response
+- Build a home lab replicating real-world environments
+
+---
+
 ## 📫 Contact
-Have feedback or questions? Feel free to connect with me on LinkedIn or open an issue.
+Have feedback or questions? Feel free to reach out to me on LinkedIn or open an issue.
 
 

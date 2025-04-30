@@ -26,8 +26,8 @@ This project documents my hands-on home lab setup for practicing Security Operat
 ## 📷 Screenshots
 Screenshots of the lab setup and alert analysis will be added soon, including:
 - UTM
-- 
   ![VM Setup Example](screenshots/vm-config-1.png)
+  
 - Security Onion dashboard
 - Zeek log entries
 - Detected threats (e.g., DNS tunneling, port scans)

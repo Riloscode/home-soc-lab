@@ -7,6 +7,8 @@
 
 [View Screenshot 3](vm.png)
 
+[View Screenshot 3](vm-config-3.png)
+
 
 ### 📦 Installation Start
 ![Install Start](screenshots/install-start.png)

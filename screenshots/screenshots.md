@@ -1,5 +1,6 @@
 ### 🔧 VM Configuration
-###Initial VM Hardware Settings:***
+**Initial VM Hardware Settings:**
+
 [View Screenshot 1](vm-config-1.png)
 
 [VM Config](vm.png)

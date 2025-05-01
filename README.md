@@ -70,6 +70,7 @@ This project provides a reproducible setup for cybersecurity students, analysts,
 ## 📄 Documentation
 
 - [Home SOC Lab Setup Guide](setup/install_steps.md)
+- [IDS/IPS Validation (Suricata)](setup/suricata.md)
 
 ---
 

@@ -38,7 +38,7 @@ This project provides a reproducible setup for cybersecurity students, analysts,
 
 1. Download Ubuntu Server ARM64 ISO from [Ubuntu Releases](https://cdimage.ubuntu.com/releases/22.04/release/)
 2. Create a new UTM VM using the ISO
-3. Follow [Home SOC Lab Setup](./docs/Home%20Soc%20Lab%20Setup.md) to complete installation
+3. Follow [Home SOC Lab Setup Guide](setup/install_steps.md) to complete installation
 4. Install Docker and deploy tools:
    ```bash
    sudo apt update && sudo apt upgrade -y

@@ -1,3 +1,9 @@
+# Zeek Traffic Summary Report
+
+_Report generated on: May 1, 2025_
+
+This report summarizes network traffic captured by Zeek in the home SOC lab environment.
+
 🔒 Top Source IPs
 
 | IP Address               | Count |

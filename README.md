@@ -63,7 +63,6 @@ This project provides a reproducible setup for cybersecurity students, analysts,
 - ✅ Use **separate network interfaces** for:
   - NIC 1: System access/updates (management)
   - NIC 2: LAN monitoring (traffic sniffing)
-- 🧼 Sanitize all screenshots, logs, and metadata before sharing publicly.
 
 ---
 

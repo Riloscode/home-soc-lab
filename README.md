@@ -69,7 +69,7 @@ This project provides a reproducible setup for cybersecurity students, analysts,
 
 ## 📄 Documentation
 
-- [Home SOC Lab Setup Guide](./docs/Home%20Soc%20Lab%20Setup.md)
+- [Home SOC Lab Setup Guide](setup/install_steps.md)
 
 ---
 

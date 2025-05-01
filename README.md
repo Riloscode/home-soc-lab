@@ -48,5 +48,33 @@ This project provides a reproducible setup for cybersecurity students, analysts,
    sudo usermod -aG docker $USER
 
 ---
-📬 Contact
-Feel free to open an issue or PR if you want to collaborate or report a problem!
+## 🧪 Tools You Can Run
+
+- **Zeek** – Network traffic analysis engine
+- **Suricata** – High-performance IDS/IPS engine
+- **Kibana** – Web-based visual dashboard (optional)
+- **Elasticsearch** – Log and event data backend
+
+---
+
+## 🔐 Security Notes
+
+- 🔒 This VM is intended for isolated lab use only; direct internet exposure is not recommended.
+- ✅ Use **separate network interfaces** for:
+  - NIC 1: System access/updates (management)
+  - NIC 2: LAN monitoring (traffic sniffing)
+- 🧼 Sanitize all screenshots, logs, and metadata before sharing publicly.
+
+---
+
+## 📄 Documentation
+
+- [Home SOC Lab Setup Guide](./docs/Home%20Soc%20Lab%20Setup.md)
+
+---
+
+## 📬 Contact
+
+Have suggestions, feedback, or want to collaborate?  
+Open an issue or submit a pull request!
+

@@ -1,6 +1,6 @@
 # ✅ Network Visibility Validation (Zeek)
 
-We verified that Zeek is capturing live network traffic and generating structured logs on the active network interface (`enp0s1`).
+We verified that Zeek captures live network traffic and generates structured logs on the active network interface (`enp0s1`).
 
 ---
 
@@ -11,30 +11,21 @@ A live capture was initiated using the Zeek container with the following command
 ```bash
 zeek -i enp0s1 local
 Test traffic was then generated using basic commands like:
-
-bash
-Copy
-Edit
 curl http://example.com
 ping 8.8.8.8
+```
+
 📁 Logs Captured
 Zeek generated the following logs under /pcap and exported them to the mounted host directory ./zeek-logs/:
-
-conn.log – Network connection summaries
-
-dns.log – DNS requests and responses
-
-http.log – HTTP transaction summaries (triggered by curl)
+  conn.log – Network connection summaries
+  dns.log – DNS requests and responses
+  http.log – HTTP transaction summaries (triggered by curl)
 
 🧠 Sample Log Insight
 A parsed summary from conn.log revealed active local devices and external connections:
-
-bash
-Copy
-Edit
-192.168.x.1      # Likely router
-192.168.x.20     # Other LAN device
-192.168.x.42     # This Zeek VM
+192.168.x.x      # Likely router
+192.168.x.x0     # Other LAN device
+192.168.x.x2     # This Zeek VM
 Zeek also recorded metadata such as byte counts, ports, protocols, and session durations.
 
 ✅ Result

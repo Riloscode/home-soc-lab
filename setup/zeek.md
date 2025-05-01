@@ -35,3 +35,6 @@ Logs are structured, accessible, and reflect real network activity within the la
 ## Example 1
 [Zeek-Script-Report](zeek_report_summary.md)
 
+## Example 2
+
+

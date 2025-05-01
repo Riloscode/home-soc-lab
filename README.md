@@ -1,84 +1,52 @@
-# SOC Lab – Home Security Monitoring Environment
+# 🛡️ Home SOC Lab – UTM + Ubuntu ARM + Docker
 
-## 📌 Overview
-This project documents my hands-on home lab setup for practicing Security Operations Center (SOC) skills using real-world tools like **Security Onion**, **Zeek**, **Nessus**, and **Wireshark**. The goal is to simulate a monitored environment for detecting, analyzing, and responding to suspicious network activity.
-## 📚 Table of Contents
-- [Overview](#overview)
-- [Tools Used](#tools-used)
-- [Screenshots](screenshots/screenshots.md)
-- [Lab Setup](setup/install_steps.md)
-- [Skills Practiced](#skills-practiced)
-- [Future Additions](#future-additions)
-- [Contact](#contact)
-
+This repository documents a lightweight Security Operations Center (SOC) lab built on a Mac (M2 chip) using UTM to virtualize Ubuntu ARM64, with core security tools deployed via Docker.
 
 ---
 
-## 🛠️ Tools Used
-- **Security Onion** – All-in-one SOC platform for intrusion detection and log analysis
-- **Zeek (formerly Bro)** – Network traffic analysis
-- **Nessus** – Vulnerability scanner
-- **Wireshark** – Deep packet inspection
-- **VirtualBox/UTM** – Virtualization for isolated lab environments
+## 🔧 Project Overview
+
+This project provides a reproducible setup for cybersecurity students, analysts, and home lab enthusiasts to:
+
+- Deploy and test SOC tools like **Zeek**, **Suricata**, and **Kibana**
+- Capture and analyze traffic from a home network
+- Simulate alert generation and detection workflows
 
 ---
 
-## 📷 Screenshots
-Screenshots of the lab setup and alert analysis will be added soon, including:
-- UTM
-  ![VM Setup Example](screenshots/vm-config-1.png)
-  
-- Security Onion dashboard
-- Zeek log entries
-- Detected threats (e.g., DNS tunneling, port scans)
+## 💻 Host Environment
 
-📌 Stay tuned — this section will be updated as I capture and document key moments from the lab.
-
+- **Host OS**: macOS (Apple Silicon M2)
+- **Virtualization Tool**: [UTM](https://mac.getutm.app)
+- **Guest OS**: Ubuntu 22.04.5 ARM64 Server
 
 ---
 
-## ⚙️ Lab Setup
-- UTM-based VM running Security Onion
-- Bridged NIC to monitor real network traffic
-- Logging configured for Zeek, Suricata, and syslog sources
-- Nessus scans against local devices for detection practice
+## 📦 VM Configuration
+
+| Component     | Value                |
+|---------------|----------------------|
+| CPU Cores     | 4                    |
+| Memory        | 8–12 GB              |
+| Disk          | 84 GB                |
+| NIC 1         | Bridged (management) |
+| NIC 2         | Emulated (monitoring) |
 
 ---
 
-## 🔎 What I Learned
-- Configuring and tuning IDS tools (Zeek, Suricata)
-- Identifying suspicious DNS and HTTP traffic
-- Detecting port scans and malware signatures
-- Interpreting PCAPs and alerts in Security Onion
-- Creating actionable detections and reports
+## 🚀 Quick Start
+
+1. Download Ubuntu Server ARM64 ISO from [Ubuntu Releases](https://cdimage.ubuntu.com/releases/22.04/release/)
+2. Create a new UTM VM using the ISO
+3. Follow [Home SOC Lab Setup](./docs/Home%20Soc%20Lab%20Setup.md) to complete installation
+4. Install Docker and deploy tools:
+   ```bash
+   sudo apt update && sudo apt upgrade -y
+   sudo apt install -y docker.io
+   sudo systemctl enable docker
+   sudo systemctl start docker
+   sudo usermod -aG docker $USER
 
 ---
-
-## 📁 Planned File Structure
-soc-lab/ ├── README.md # Project overview and documentation ├── screenshots/ # Visuals of setup and analysis (coming soon) ├── setup/ # Setup notes, install guides, network diagram │ ├── install_steps.md # Step-by-step Security Onion VM setup │ └── network_diagram.png # Visual diagram of home lab environment ├── logs-analysis/ # Notes on analyzed alerts, suspicious traffic │ └── suspicious-traffic.md # Summary of detected activity and findings ├── scripts/ # Custom scripts used in the lab (optional) │ └── log_parser.py # Sample: Python script to parse Zeek logs
-
----
-
-## 🚀 Future Additions
-- Automate alert triage with Python
-- Add Elastic dashboards for custom queries
-- Upload Nessus vulnerability reports
-- Integrate with GitHub Actions for CI learning
-
----
-
-> 🚧 This project is a work in progress. Soon, additional setup steps, screenshots, and notes will be added.
-
----
-
-## ✅ Goals
-- Learn SOC tooling hands-on (Security Onion, Zeek, Suricata)
-- Practice detection, analysis, and response
-- Build a home lab replicating real-world environments
-
----
-
-## 📫 Contact
-Have feedback or questions? Feel free to reach out to me on LinkedIn or open an issue.
-
-
+📬 Contact
+Feel free to open an issue or PR if you want to collaborate or report a problem!

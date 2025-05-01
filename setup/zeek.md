@@ -33,4 +33,5 @@ Zeek is fully operational and providing deep network visibility from traffic cap
 Logs are structured, accessible, and reflect real network activity within the lab.
 
 ## Example 1
-[Script-report]()
+[Script-Report](setup/zeek_report_summary.md)
+

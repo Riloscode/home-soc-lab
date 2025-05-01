@@ -1,74 +1,105 @@
-# 🔧 Security Onion VM Setup – Install Steps
+🛠️ Home SOC Lab Setup Guide
 
-This guide outlines the steps I followed to install and configure Security Onion in a UTM-based virtual machine for my home SOC lab.
+This document provides detailed instructions for setting up a lightweight SOC (Security Operations Center) lab using UTM and Ubuntu Server (ARM64) on a macOS (Apple Silicon) host.
 
----
+📦 System Requirements
 
-## 🖥️ Environment
-- **Host Machine:** macOS (M2 Pro)
-- **Virtualization:** UTM
-- **Guest OS:** Security Onion ISO (latest version)
-- **Network Mode:** Bridged (to capture local LAN traffic)
+Host OS: macOS (M1/M2)
 
----
+Virtualization: UTM
 
-## 📥 Step 1: Download Security Onion
-- Visit: [https://securityonionsolutions.com/software](https://securityonionsolutions.com/software)
-- Download the latest **ISO** image (use the ISO, not OVA).
+Guest OS: Ubuntu 22.04.5 ARM64 Server
 
----
+Resources:
 
-## 🛠️ Step 2: Create the UTM VM
-1. Open UTM → click **Create a New Virtual Machine**.
-2. Select **Virtualize → Linux → Boot ISO Image**.
-3. Attach the Security Onion ISO.
-4. Set resources:
-   - **Memory:** 8–12 GB (minimum)
-   - **CPUs:** 2–4
-   - **Disk:** 100+ GB
-5. Set **Network Interface** to **Bridged Mode** (important for traffic capture).
+CPU: 4 Cores
 
----
+RAM: 8–12 GB
 
-## ⚙️ Step 3: Install Security Onion
-1. Boot the VM using the ISO.
-2. Choose **Install Security Onion** from the menu.
-3. Follow the on-screen installer (default options are fine for testing).
-4. After install, reboot the VM and eject the ISO.
+Disk: 84 GB+
 
----
+Network: 2 NICs (1 for management, 1 for monitoring)
 
-## 🔐 Step 4: Initial Configuration
-After reboot:
-1. Login to the system using the credentials you created.
-2. Run:
-   ```bash
-   sudo sosetup
+🔧 Steps to Set Up the Lab
 
-During setup, select the following options:
-Mode: Evaluation Mode (for lab testing)
-Tools to Enable: Zeek, Suricata, and Elastic Stack
-Passwords: Use default passwords or set your own secure credentials
+1. Download Required ISO
 
-📡 Step 5: Verify Network Visibility
-Confirm that your bridged network adapter is capturing traffic.
-Use another device on your LAN to generate traffic (browse, stream, etc.).
-Open Security Onion dashboards:
-  Kibana
-  Squert
-Validate that network logs, alerts, and traffic flows are being collected.
+Go to Ubuntu Releases
 
-✅ Next Steps
-Deploy Nessus in a separate VM to simulate vulnerabilities and scanning activity.
-Analyze generated logs in:
-  Zeek
-  Suricata
-  Elastic/Kibana dashboards
-Export screenshots and analysis results for GitHub documentation.
+Download ubuntu-22.04.5-live-server-arm64.iso
 
-🗒️ Notes
-If no traffic is detected, check:
+2. Create VM in UTM
 
-VM network adapter settings (ensure Bridged mode is active).
-Local firewall settings (temporary disable for testing if needed).
-Monitor system performance and adjust VM resources if necessary for stability.
+Open UTM → Create New VM → Virtualize → Linux → ARM64
+
+Boot from the ISO image
+
+Configure hardware:
+
+CPU: 4 cores
+
+Memory: 8–12 GB
+
+Disk: 84 GB
+
+Network: Add two NICs (first bridged, second bridged/emulated)
+
+3. Install Ubuntu Server
+
+Select: Try or Install Ubuntu Server
+
+Choose: Continue without updating
+
+Enable NIC1, disable NIC2
+
+Skip proxy
+
+Accept default mirror
+
+Use entire disk with LVM (no encryption)
+
+Create user credentials
+
+Enable OpenSSH server
+
+Skip Snap installs
+
+After install, remove ISO and reboot
+
+4. First Boot & Updates
+
+sudo apt update && sudo apt upgrade -y
+
+🐳 Install Docker & Configure
+
+sudo apt install -y docker.io
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo usermod -aG docker $USER
+newgrp docker
+
+🚀 Optional Docker Tools
+
+Zeek
+
+Suricata
+
+Kibana
+
+Elasticsearch
+
+(Docker setup for each tool can be documented in tool-specific markdown files.)
+
+🔐 Security Best Practices
+
+Use separate interfaces for management and monitoring
+
+Avoid exposing the VM to the open internet
+
+Sanitize logs and screenshots before sharing or publishing
+
+📎 See Also
+
+README.md – Main project summary
+
+Docker Compose Samples – Coming soon

@@ -1,105 +1,79 @@
-🛠️ Home SOC Lab Setup Guide
+# Home SOC Lab Setup Guide
 
 This document provides detailed instructions for setting up a lightweight SOC (Security Operations Center) lab using UTM and Ubuntu Server (ARM64) on a macOS (Apple Silicon) host.
 
-📦 System Requirements
+---
 
-Host OS: macOS (M1/M2)
+## System Requirements
 
-Virtualization: UTM
+- **Host OS**: macOS (M1/M2)
+- **Virtualization**: UTM
+- **Guest OS**: Ubuntu 22.04.5 ARM64 Server
+- **Resources**:
+  - CPU: 4 Cores
+  - RAM: 8–12 GB
+  - Disk: 84 GB+
+  - Network: 2 NICs (1 for management, 1 for monitoring)
 
-Guest OS: Ubuntu 22.04.5 ARM64 Server
+---
 
-Resources:
+## Steps to Set Up the Lab
 
-CPU: 4 Cores
+### 1. Download Required ISO
 
-RAM: 8–12 GB
+- Visit: [Ubuntu Releases](https://cdimage.ubuntu.com/releases/22.04/release/)
+- Download: `ubuntu-22.04.5-live-server-arm64.iso`
 
-Disk: 84 GB+
+### 2. Create VM in UTM
 
-Network: 2 NICs (1 for management, 1 for monitoring)
+- Open UTM → Create New VM → Virtualize → Linux → ARM64
+- Boot from the ISO image
+- Configure hardware:
+  - CPU: 4 cores
+  - Memory: 8–12 GB
+  - Disk: 84 GB
+  - Network: Add two NICs (first bridged, second bridged/emulated)
 
-🔧 Steps to Set Up the Lab
+### 3. Install Ubuntu Server
 
-1. Download Required ISO
+- Select: `Try or Install Ubuntu Server`
+- Choose: `Continue without updating`
+- Enable NIC1, disable NIC2
+- Skip proxy
+- Accept default mirror
+- Use entire disk with LVM (no encryption)
+- Create user credentials
+- Enable OpenSSH server
+- Skip Snap installs
+- After install, remove ISO and reboot
 
-Go to Ubuntu Releases
+### 4. First Boot & Updates
 
-Download ubuntu-22.04.5-live-server-arm64.iso
+Run the following command:
 
-2. Create VM in UTM
-
-Open UTM → Create New VM → Virtualize → Linux → ARM64
-
-Boot from the ISO image
-
-Configure hardware:
-
-CPU: 4 cores
-
-Memory: 8–12 GB
-
-Disk: 84 GB
-
-Network: Add two NICs (first bridged, second bridged/emulated)
-
-3. Install Ubuntu Server
-
-Select: Try or Install Ubuntu Server
-
-Choose: Continue without updating
-
-Enable NIC1, disable NIC2
-
-Skip proxy
-
-Accept default mirror
-
-Use entire disk with LVM (no encryption)
-
-Create user credentials
-
-Enable OpenSSH server
-
-Skip Snap installs
-
-After install, remove ISO and reboot
-
-4. First Boot & Updates
-
+```bash
 sudo apt update && sudo apt upgrade -y
 
-🐳 Install Docker & Configure
-
+# Install Docker & Configure
 sudo apt install -y docker.io
 sudo systemctl enable docker
 sudo systemctl start docker
 sudo usermod -aG docker $USER
 newgrp docker
+```
+### Optional Docker Tools
+  You can deploy these tools using Docker:
+  Zeek – Network traffic analysis
+  Suricata – IDS/IPS engine
+  Kibana – Visual dashboard (optional)
+  Elasticsearch – Log storage backend
+Docker setup for each tool can be documented in tool-specific markdown files.
 
-🚀 Optional Docker Tools
+### Security Best Practices
+  Use separate interfaces for management and monitoring
+  Avoid exposing the VM to the open internet
+  Sanitize logs and screenshots before sharing or publishing
 
-Zeek
-
-Suricata
-
-Kibana
-
-Elasticsearch
-
-(Docker setup for each tool can be documented in tool-specific markdown files.)
-
-🔐 Security Best Practices
-
-Use separate interfaces for management and monitoring
-
-Avoid exposing the VM to the open internet
-
-Sanitize logs and screenshots before sharing or publishing
-
-📎 See Also
-
+## See Also
 README.md – Main project summary
-
-Docker Compose Samples – Coming soon
+docker-compose/ – Docker samples (coming soon)

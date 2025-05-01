@@ -1,0 +1,32 @@
+Top Source IPs
+Item,Count
+192.168.4.31,32
+192.168.4.20,25
+192.168.4.1,25
+fd4c:f450:3dae:1:62f4:19ff:febf:d7b2,24
+fd4c:f450:3dae:1::1,24
+fe80::9d1f:4ccf:87de:5e5,12
+fe80::62f4:19ff:fec9:f952,12
+fe80::62f4:19ff:febf:d7b2,11
+192.168.4.22,9
+192.168.4.42,8
+
+Top Destination IPs
+Item,Count
+ff02::fb,58
+224.0.0.251,58
+239.255.255.250,27
+ff02::1,24
+ff02::16,7
+ff02::1:2,6
+ff02::1:ff8f:3ef8,5
+192.168.7.255,5
+192.168.4.1,5
+8.8.8.8,1
+
+Protocols Seen
+Item,Count
+udp,164
+icmp,40
+tcp,4
+

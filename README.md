@@ -78,3 +78,38 @@ This project provides a reproducible setup for cybersecurity students, analysts,
 Have suggestions, feedback, or want to collaborate?  
 Open an issue or submit a pull request!
 
+## 🚧 Project Status: In Progress
+
+This is an active, hands-on project to build a **home-based Security Operations Center (SOC)** lab using open-source tools. It’s designed to sharpen my network visibility, threat detection, and log analysis skills in a practical environment.
+
+> ⚠️ **This project is ongoing** — I regularly push updates as I integrate new tools, refine detections, and analyze network traffic. Check back for more insights.
+
+---
+
+## 🔧 Tools Used
+
+| Tool       | Purpose                                  |
+|------------|------------------------------------------|
+| **Zeek**   | Network protocol analysis & log generation |
+| **Suricata** | Real-time IDS/IPS and packet logging     |
+| **ZMap**   | High-speed network scanning (external visibility) |
+| **Nmap**   | Port scanning and service fingerprinting  |
+| **Docker** | Containerized deployments (Suricata, log processors) |
+| **tcpdump**| Raw packet capture                        |
+
+---
+
+## 🔍 Key Activities So Far
+
+- ✅ Set up isolated VM environment with Ubuntu
+- ✅ Captured and analyzed live network traffic
+- ✅ Logged abnormal events from internal IPs (e.g., scan attempts, failed SSH)
+- ✅ Used `zeek-logs` and `conn.log` for IP-specific behavior
+- ✅ Performed targeted scans using Nmap and ZMap
+- ✅ Investigated rejected connections and anomalies
+
+---
+
+🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/kendrick-riley-7126176b) to follow the progress or discuss the setup.
+
+

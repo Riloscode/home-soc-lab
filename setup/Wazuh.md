@@ -35,12 +35,12 @@ To begin installing an agent:
 ---
 
 ## 🪟 Installing the Wazuh Agent on Windows
+
+> 📸 Screenshot Example  
 > ![Wazuh Deployment Wizard Screenshot](./Deploy_agent_windows.png)
 
 Use the command provided at **Step 4** of the wizard. This command downloads, installs, and configures the Wazuh agent.
 
-> 📸 Screenshot Example  
-> *Include Windows installation screenshot here*
 
 ---
 
@@ -53,8 +53,6 @@ Likewise, copy the generated command and run it in your terminal:
 ```bash
 # Example (replace with the actual command from the wizard)
 curl -sO https://packages.wazuh.com/agent.sh && sudo bash agent.sh
-📸 Screenshot Example
-Include Debian/Ubuntu installation screenshot here
 
 
 📌 Notes

@@ -44,6 +44,8 @@ Use the command provided at **Step 4** of the wizard. This command downloads, in
 ---
 
 ## 🐧 Installing the Wazuh Agent on Debian/Ubuntu
+> 📸 Screenshot Example  
+> ![Wazuh Deployment Wizard Screenshot](./Deploy_agent.png)
 
 Likewise, copy the generated command and run it in your terminal:
 

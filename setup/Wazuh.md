@@ -53,6 +53,7 @@ curl -sO https://packages.wazuh.com/agent.sh && sudo bash agent.sh
 📸 Screenshot Example
 Include Debian/Ubuntu installation screenshot here
 
+
 📌 Notes
 The deployment wizard adjusts the install command based on OS and agent group.
 

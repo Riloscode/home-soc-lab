@@ -30,7 +30,7 @@ To begin installing an agent:
 3. Follow the interactive wizard.
 
 > 📸 Screenshot Example  
-> *Include screenshot here*
+> ![Wazuh Deployment Wizard Screenshot](./wazuh_install.png)
 
 ---
 

@@ -35,6 +35,7 @@ To begin installing an agent:
 ---
 
 ## 🪟 Installing the Wazuh Agent on Windows
+> ![Wazuh Deployment Wizard Screenshot](./Deploy_agent_windows.png)
 
 Use the command provided at **Step 4** of the wizard. This command downloads, installs, and configures the Wazuh agent.
 

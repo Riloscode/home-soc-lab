@@ -8,7 +8,7 @@ This repository documents a lightweight Security Operations Center (SOC) lab bui
 
 This project provides a reproducible setup for cybersecurity students, analysts, and home lab enthusiasts to:
 
-- Deploy and test SOC tools like **Zeek**, **Suricata**, and **Kibana**
+- Deploy and test SOC tools like **Zeek**, **Suricata**, **Kibana** and **Wazuh**
 - Capture and analyze traffic from a home network
 - Simulate alert generation and detection workflows
 
@@ -70,6 +70,7 @@ This project provides a reproducible setup for cybersecurity students, analysts,
 
 - [Home SOC Lab Setup Guide](setup/install_steps.md)
 - [IDS/IPS Validation (Suricata)](setup/suricata.md)
+- [Wazuh EDR Solution](setup/Wazuh.md)
 
 ---
 
@@ -88,25 +89,29 @@ This is an active, hands-on project to build a **home-based Security Operations 
 
 ## 🔧 Tools Used
 
-| Tool       | Purpose                                  |
-|------------|------------------------------------------|
-| **Zeek**   | Network protocol analysis & log generation |
-| **Suricata** | Real-time IDS/IPS and packet logging     |
-| **ZMap**   | High-speed network scanning (external visibility) |
-| **Nmap**   | Port scanning and service fingerprinting  |
-| **Docker** | Containerized deployments (Suricata, log processors) |
-| **tcpdump**| Raw packet capture                        |
+| Tool         | Purpose                                            |
+|--------------|----------------------------------------------------|
+| **Wazuh**     | Log collection, SIEM, and security event correlation |
+| **Zeek**      | Network protocol analysis & log generation         |
+| **Suricata**  | Real-time IDS/IPS and packet logging               |
+| **ZMap**      | High-speed network scanning (external visibility)  |
+| **Nmap**      | Port scanning and service fingerprinting           |
+| **Docker**    | Containerized deployments (Suricata, log processors) |
+| **tcpdump**   | Raw packet capture                                 |
 
 ---
 
 ## 🔍 Key Activities So Far
 
-- ✅ Set up isolated VM environment with Ubuntu
-- ✅ Captured and analyzed live network traffic
-- ✅ Logged abnormal events from internal IPs (e.g., scan attempts, failed SSH)
-- ✅ Used `zeek-logs` and `conn.log` for IP-specific behavior
-- ✅ Performed targeted scans using Nmap and ZMap
-- ✅ Investigated rejected connections and anomalies
+- ✅ Set up isolated VM environment with Ubuntu  
+- ✅ Installed and configured the Wazuh agent on multiple endpoints  
+- ✅ Captured and analyzed live network traffic using Zeek and Suricata  
+- ✅ Logged abnormal events from internal IPs (e.g., scan attempts, failed SSH)  
+- ✅ Used `zeek-logs`, `conn.log`, and Wazuh alerts for IP-specific behavior analysis  
+- ✅ Performed targeted scans using Nmap and ZMap  
+- ✅ Investigated rejected connections and Wazuh-detected anomalies  
+- ✅ Grouped agents in Wazuh for organized log management  
+- ✅ Used Wazuh dashboards to correlate logs and visualize threats
 
 ---
 

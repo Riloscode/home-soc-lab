@@ -1,120 +1,116 @@
-# 🛡️ Home SOC Lab – UTM + Ubuntu ARM + Docker
+# Home SOC Lab: UTM, Ubuntu ARM, Docker, Wazuh, Zeek, Suricata, and Kibana
 
-This repository documents a lightweight Security Operations Center (SOC) lab built on a Mac (M2 chip) using UTM to virtualize Ubuntu ARM64, with core security tools deployed via Docker.
+## Project Summary
 
----
+This repository documents a hands-on Security Operations Center lab built to practice SOC analyst skills, network monitoring, alert review, and security documentation.
 
-## 🔧 Project Overview
+The lab was built on a Mac with an Apple Silicon M2 chip using UTM to virtualize Ubuntu ARM64. Core security tools are deployed and tested using Linux and Docker-based workflows.
 
-This project provides a reproducible setup for cybersecurity students, analysts, and home lab enthusiasts to:
+## Objective
 
-- Deploy and test SOC tools like **Zeek**, **Suricata**, **Kibana** and **Wazuh**
-- Capture and analyze traffic from a home network
-- Simulate alert generation and detection workflows
+The goal of this project is to build practical cybersecurity experience by deploying security monitoring tools, capturing network traffic, reviewing alerts, and documenting investigation workflows.
 
----
+This lab helps develop skills related to:
 
-## 💻 Host Environment
+- SOC analysis
+- Network monitoring
+- Intrusion detection
+- Log analysis
+- Alert triage
+- Incident documentation
+- Linux administration
+- Docker-based tool deployment
 
-- **Host OS**: macOS (Apple Silicon M2)
-- **Virtualization Tool**: [UTM](https://mac.getutm.app)
-- **Guest OS**: Ubuntu 22.04.5 ARM64 Server
+## Lab Environment
 
----
+| Component | Details |
+|---|---|
+| Host OS | macOS on Apple Silicon M2 |
+| Virtualization | UTM |
+| Guest OS | Ubuntu 22.04.5 ARM64 Server |
+| CPU | 4 cores |
+| Memory | 8–12 GB |
+| Disk | 84 GB |
+| NIC 1 | Bridged management interface |
+| NIC 2 | Emulated monitoring interface |
 
-## 📦 VM Configuration
+## Tools Used
 
-| Component     | Value                |
-|---------------|----------------------|
-| CPU Cores     | 4                    |
-| Memory        | 8–12 GB              |
-| Disk          | 84 GB                |
-| NIC 1         | Bridged (management) |
-| NIC 2         | Emulated (monitoring) |
+| Tool | Purpose |
+|---|---|
+| Wazuh | Log collection, SIEM-style visibility, endpoint monitoring, and alert correlation |
+| Zeek | Network protocol analysis and log generation |
+| Suricata | IDS/IPS testing, packet inspection, and alert generation |
+| Kibana | Dashboarding and visual analysis |
+| Elasticsearch | Log and event data backend |
+| Docker | Containerized tool deployment |
+| Nmap | Port scanning and service fingerprinting |
+| ZMap | High-speed network scanning for lab testing |
+| tcpdump | Packet capture and traffic inspection |
+| Linux | System administration and security tooling |
 
----
+## Lab Architecture
 
-## 🚀 Quick Start
+The lab uses a virtualized Ubuntu server as the core SOC environment. The VM is configured with separate network interfaces for management and monitoring.
 
-1. Download Ubuntu Server ARM64 ISO from [Ubuntu Releases](https://cdimage.ubuntu.com/releases/22.04/release/)
-2. Create a new UTM VM using the ISO
-3. Follow [Home SOC Lab Setup Guide](setup/install_steps.md) to complete installation
-4. Install Docker and deploy tools:
-   ```bash
-   sudo apt update && sudo apt upgrade -y
-   sudo apt install -y docker.io
-   sudo systemctl enable docker
-   sudo systemctl start docker
-   sudo usermod -aG docker $USER
+- Management interface: used for system updates, package installation, and administrative access
+- Monitoring interface: used for traffic capture and network visibility
+- Docker services: used to deploy and manage security tools
+- Security tools: used to collect logs, inspect traffic, generate alerts, and support investigations
 
----
-## 🧪 Tools You Can Run
+## Key Activities Completed
 
-- **Zeek** – Network traffic analysis engine
-- **Suricata** – High-performance IDS/IPS engine
-- **Kibana** – Web-based visual dashboard (optional)
-- **Elasticsearch** – Log and event data backend
+- Set up an isolated Ubuntu VM environment using UTM
+- Installed and configured Docker
+- Installed and tested Wazuh agent functionality
+- Captured and reviewed live network traffic
+- Used Zeek logs such as `conn.log` for network behavior analysis
+- Tested Suricata IDS/IPS alerting
+- Performed targeted scans using Nmap and ZMap
+- Investigated rejected connections and abnormal events
+- Grouped agents in Wazuh for organized log management
+- Used dashboards to review and correlate security events
 
----
+## Skills Demonstrated
 
-## 🔐 Security Notes
+- SOC lab design
+- Linux administration
+- Docker deployment
+- Network monitoring
+- IDS/IPS concepts
+- Log analysis
+- Alert triage
+- Packet capture
+- Troubleshooting
+- Security documentation
+- Technical writing
 
-- 🔒 This VM is intended for isolated lab use only; direct internet exposure is not recommended.
-- ✅ Use **separate network interfaces** for:
-  - NIC 1: System access/updates (management)
-  - NIC 2: LAN monitoring (traffic sniffing)
+## Documentation
 
----
+- [Home SOC Lab Setup Guide](setup/)
+- IDS/IPS validation notes
+- Wazuh configuration notes
+- Network monitoring notes
 
-## 📄 Documentation
+## Security Notes
 
-- [Home SOC Lab Setup Guide](setup/install_steps.md)
-- [IDS/IPS Validation (Suricata)](setup/suricata.md)
-- [Wazuh EDR Solution](setup/Wazuh.md)
+This lab is intended for isolated educational use only.
 
----
+- Do not expose lab services directly to the internet
+- Use sanitized screenshots when publishing findings
+- Avoid uploading real IP addresses, credentials, tokens, or sensitive network information
+- Keep lab activity limited to systems you own or have permission to test
 
-## 📬 Contact
+## Current Status
 
-Have suggestions, feedback, or want to collaborate?  
-Open an issue or submit a pull request!
+This project is currently in progress. The lab is being expanded to include more detection testing, endpoint logging, alert review, and incident-style writeups.
 
-## 🚧 Project Status: In Progress
+## Planned Improvements
 
-This is an active, hands-on project to build a **home-based Security Operations Center (SOC)** lab using open-source tools. It’s designed to sharpen my network visibility, threat detection, and log analysis skills in a practical environment.
-
-> ⚠️ **This project is ongoing** — I regularly push updates as I integrate new tools, refine detections, and analyze network traffic. Check back for more insights.
-
----
-
-## 🔧 Tools Used
-
-| Tool         | Purpose                                            |
-|--------------|----------------------------------------------------|
-| **Wazuh**     | Log collection, SIEM, and security event correlation |
-| **Zeek**      | Network protocol analysis & log generation         |
-| **Suricata**  | Real-time IDS/IPS and packet logging               |
-| **ZMap**      | High-speed network scanning (external visibility)  |
-| **Nmap**      | Port scanning and service fingerprinting           |
-| **Docker**    | Containerized deployments (Suricata, log processors) |
-| **tcpdump**   | Raw packet capture                                 |
-
----
-
-## 🔍 Key Activities So Far
-
-- ✅ Set up isolated VM environment with Ubuntu  
-- ✅ Installed and configured the Wazuh agent on multiple endpoints  
-- ✅ Captured and analyzed live network traffic using Zeek and Suricata  
-- ✅ Logged abnormal events from internal IPs (e.g., scan attempts, failed SSH)  
-- ✅ Used `zeek-logs`, `conn.log`, and Wazuh alerts for IP-specific behavior analysis  
-- ✅ Performed targeted scans using Nmap and ZMap  
-- ✅ Investigated rejected connections and Wazuh-detected anomalies  
-- ✅ Grouped agents in Wazuh for organized log management  
-- ✅ Used Wazuh dashboards to correlate logs and visualize threats
-
----
-
-🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/kendrick-riley-7126176b) to follow the progress or discuss the setup.
-
-
+- Add Windows endpoint logging
+- Forward Windows logs into Wazuh
+- Add Sysmon configuration and event analysis
+- Simulate brute-force login activity
+- Create SOC investigation reports from generated alerts
+- Add screenshots of dashboards and detection results
+- Add sample incident reports under a `reports/` folder
